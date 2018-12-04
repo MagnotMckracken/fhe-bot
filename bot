@@ -1,0 +1,39 @@
+import discord
+from discord.ext.commands import bot
+from discord.ext import commands
+import asyncio
+import time
+
+client = commands.Bot (command_prefix = "!")
+
+FHE1 = ['Prayer - Tim','Scripture - Mary','Thought - Connor','Treat - Elina','Activity - Gage']
+FHE2 = ['Prayer - Mary','Scripture - Connor','Thought - Elina','Treat - Gage','Activity - Tim']
+FHE3 = ['Prayer - Connor','Scripture - Elina','Thought - Gage','Treat - Tim','Activity - Mary']
+FHE4 = ['Prayer - Elina','Scripture - Gage','Thought - Tim','Treat - Mary','Activity - Connor']
+FHE5 = ['Prayer - Gage','Scripture - Tim','Thought - Mary','Treat - Connor','Activity - Elina']
+FHE = [FHE1,FHE2,FHE3,FHE4,FHE5]
+
+@client.event
+async def on_ready():
+    print('bot is ready')
+
+ 
+@client.event
+
+async def on_message(message):
+    if message.content == "FHE1":
+        await client.send_message(message.channel,'\n'.join(FHE[0]))
+    if message.content == "FHE2":
+        await client.send_message(message.channel,'\n'.join(FHE[1]))
+    if message.content == "FHE3":
+        await client.send_message(message.channel,'\n'.join(FHE[2]))
+    if message.content == "FHE4":
+        await client.send_message(message.channel,'\n'.join(FHE[3]))
+    if message.content == "FHE5":
+        await client.send_message(message.channel,'\n'.join(FHE[4]))
+    
+        
+                             
+    
+client.run("NTE5MDIzNzk3NTk3MTEwMjk0.Ducmng.cgZDBJx66H1Ac428KjNZOTSh0ug")
+
